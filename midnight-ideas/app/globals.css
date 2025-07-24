@@ -4,6 +4,39 @@
 
 body {
   @apply bg-deep-black text-white font-tajawal;
+  background-image: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    -5vw -10vh 2px #fff, 15vw -20vh 3px #fff, -25vw 30vh 1px #fff, 40vw 40vh 2px #fff, 50vw -50vh 3px #fff,
+    -60vw 60vh 1px #fff, 75vw -70vh 2px #fff, -85vw 80vh 3px #fff, 90vw -90vh 1px #fff, 100vw 100vh 2px #fff;
+  animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    -5vw -10vh 2px #fff, 15vw -20vh 3px #fff, -25vw 30vh 1px #fff, 40vw 40vh 2px #fff, 50vw -50vh 3px #fff,
+    -60vw 60vh 1px #fff, 75vw -70vh 2px #fff, -85vw 80vh 3px #fff, 90vw -90vh 1px #fff, 100vw 100vh 2px #fff;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
 }
 
 .mad-mode {

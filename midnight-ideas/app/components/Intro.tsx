@@ -1,31 +1,13 @@
 "use client";
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 
 const Intro = () => {
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const stars = document.getElementById('stars');
-      if (stars) {
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        stars.style.backgroundPosition = `${x}% ${y}%`;
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   return (
     <section
       id="intro"
       className="h-screen flex justify-center items-center text-center relative"
     >
-      <div id="stars" className="absolute inset-0 bg-stardust opacity-50"></div>
+      <div id="stars"></div>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
