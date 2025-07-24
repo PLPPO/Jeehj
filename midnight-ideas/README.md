@@ -62,6 +62,10 @@ This is a personal portfolio website built for a creative night coder who thrive
    ```
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Live Website
+
+You can view the live website at [https://your-website-url.com](https://your-website-url.com).
+
 ## Deployment
 
 The website is ready to be deployed to [Vercel](https://vercel.com/). You will need to connect your GitHub repository to Vercel and set the environment variables in the Vercel dashboard.
