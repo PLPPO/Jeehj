@@ -1,3 +1,4 @@
+"use client";
 import projects from '../../data/projects.json';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -23,12 +24,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               viewport={{ once: true }}
-              className="bg-white/10 border border-neon-purple rounded-lg overflow-hidden"
+              className="group relative bg-white/10 border border-neon-purple rounded-lg overflow-hidden"
             >
               <Image src={project.image} alt={project.title} width={500} height={300} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-orbitron font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span key={tag} className="bg-electric-pink/20 text-electric-pink px-2 py-1 rounded-full text-sm">
@@ -36,6 +36,9 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+              </div>
+              <div className="absolute inset-0 bg-deep-black/80 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-neon-blue font-bold hover:underline">
                   View Project
                 </a>
