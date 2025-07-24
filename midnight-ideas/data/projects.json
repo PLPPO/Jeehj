@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Project Alpha",
+    "description": "A cutting-edge project that explores the intersection of AI and art.",
+    "image": "/project-alpha.png",
+    "tags": ["AI", "Art", "Next.js"],
+    "link": "#"
+  },
+  {
+    "title": "Project Beta",
+    "description": "A decentralized application that revolutionizes the way we interact with data.",
+    "image": "/project-beta.png",
+    "tags": ["Blockchain", "dApp", "React"],
+    "link": "#"
+  },
+  {
+    "title": "Project Gamma",
+    "description": "A mobile app that connects people with local communities.",
+    "image": "/project-gamma.png",
+    "tags": ["Mobile", "Community", "React Native"],
+    "link": "#"
+  }
+]

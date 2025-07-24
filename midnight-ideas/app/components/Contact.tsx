@@ -1,15 +1,24 @@
 "use client";
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Sending...');
+
+    if (!executeRecaptcha) {
+      setStatus('reCAPTCHA not available');
+      return;
+    }
+
+    const token = await executeRecaptcha('contact');
 
     try {
       const res = await fetch('/api/contact', {
@@ -17,7 +26,7 @@ const Contact = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, token }),
       });
 
       const data = await res.json();
@@ -34,7 +43,7 @@ const Contact = () => {
       console.error(error);
       setStatus('Error sending message');
     }
-  };
+  }, [executeRecaptcha, name, email, message]);
 
   return (
     <section id="contact" className="py-20">
