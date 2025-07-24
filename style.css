@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+body {
+    background-color: #0E0E10;
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(14, 14, 16, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(187, 136, 235, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #B388EB;
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.intro-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #B388EB;
+    text-shadow: 0 0 10px #B388EB, 0 0 20px #B388EB, 0 0 30px #FF6EC7;
+}
+
+.intro-text p {
+    font-size: 1.5rem;
+    color: #8BE9FD;
+}
+
+#about h2, #socials h2, #contact h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #B388EB;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #B388EB;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #B388EB;
+}
+
+.social-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #8BE9FD;
+}
+
+.social-card span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+
+.contact-btn {
+    background-color: #B388EB;
+    color: #0E0E10;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #FF6EC7;
+    box-shadow: 0 0 20px #FF6EC7;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .intro-text h1 {
+        font-size: 3rem;
+    }
+}
